@@ -3,13 +3,13 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo');
 const handlebars = require('express-handlebars');
-const port = 8080;
+const port = 8081;
 const sessionsRouter = require("./routes/sessions.router")
 const viewsRouter = require("./routes/views.router")
 
 const app = express();
 
-mongoose.connect(`mongodb+srv://fidelnadai1:639418Fidel@coderhouse.3c4pmor.mongodb.net/`).then(()=>{
+mongoose.connect(`mongodb+srv://fidelnadai1:639418@coderhouse.3c4pmor.mongodb.net/`).then(()=>{
     console.log('Success on connection')
 })
 
@@ -18,7 +18,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-        mongoUrl: `mongodb+srv://fidelnadai1:639418Fidel@coderhouse.3c4pmor.mongodb.net/`,
+        mongoUrl: `mongodb+srv://fidelnadai1:639418@coderhouse.3c4pmor.mongodb.net/`,
         ttl: 3600
     })
 }))
