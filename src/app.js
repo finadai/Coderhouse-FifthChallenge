@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo');
 const handlebars = require('express-handlebars');
 const port = 8080;
-
+const sessionsRouter = require("./routes/sessions.router")
+const viewsRouter = require("./routes/views.router")
 
 const app = express();
 
